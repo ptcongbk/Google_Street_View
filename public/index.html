@@ -29,7 +29,7 @@
           position: fenway,
           pov: {
             heading: 90,
-            pitch: 10
+            pitch: 0
           }
         });
       map.setStreetView(panorama);
@@ -38,7 +38,7 @@
           var items = data.Details;
           loadNext(items, 0);
         })
-      },8000);
+      },6000);
 
       function loadNext(datas, currentIndex) {
           setTimeout(function () {
@@ -59,7 +59,7 @@
     }
   </script>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE8rfPfkXROlc_e1gXqi56s1WzxpIZvlQ&callback=initialize">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChMSH77SyAqq4T7pCrJK02kcRTvi_VcPY&callback=initialize">
 
   </script>
 </body>
