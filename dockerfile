@@ -14,4 +14,5 @@ RUN npm install --silent
 RUN npm install react-scripts@1.1.1 -g --silent
 
 # start app
+EXPOSE '3006'
 CMD ["npm", "start"]
