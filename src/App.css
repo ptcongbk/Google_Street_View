@@ -1,12 +1,12 @@
 #map {
   float: left;
-  width: 0%;
+  width: 50%;
   position: absolute !important;
 }
 
 #pano {
   float: left;
   height: 100%;
-  width: 100%;
+  width: 50%;
   position: absolute !important;
 }
