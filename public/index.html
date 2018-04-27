@@ -22,7 +22,7 @@
       var fenway = { lat: -28.0175046, lng: 153.4020889 };
       var map = new google.maps.Map(document.getElementById('map'), {
         center: fenway,
-        zoom: 14
+        zoom: 12
       });
       var panorama = new google.maps.StreetViewPanorama(
         document.getElementById('pano'), {
@@ -30,7 +30,8 @@
           pov: {
             heading: 100,
             pitch: 0
-          }
+          },
+          motionTracking: false
         });
       map.setStreetView(panorama);
       setTimeout(function () {
