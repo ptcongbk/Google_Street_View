@@ -22,14 +22,14 @@
       var fenway = { lat: -28.0175046, lng: 153.4020889 };
       var map = new google.maps.Map(document.getElementById('map'), {
         center: fenway,
-        zoom: 8
+        zoom: 14
       });
       var panorama = new google.maps.StreetViewPanorama(
         document.getElementById('pano'), {
           position: fenway,
           pov: {
             heading: 90,
-            pitch: 5
+            pitch: 10
           }
         });
       map.setStreetView(panorama);
@@ -38,7 +38,7 @@
           var items = data.Details;
           loadNext(items, 0);
         })
-      },10000);
+      },8000);
 
       function loadNext(datas, currentIndex) {
           setTimeout(function () {
@@ -47,6 +47,7 @@
             astorPlace = { lat: data.lat, lng: data.long };
             pano = map.getStreetView();
             pano.setPosition(astorPlace);
+            map.setStreetView(panorama);
             if (data.head) {
               var pov = pano.getPov();
               pov.heading += data.head;
@@ -58,7 +59,7 @@
     }
   </script>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQsqbyIKQc9fpn_fnAH8LYHa8AoUkfmg4&callback=initialize">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDx29t62KBIr1T85MG1p02f2G0uISg37H0&callback=initialize">
 
   </script>
 </body>
