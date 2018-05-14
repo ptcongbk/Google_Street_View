@@ -22,7 +22,7 @@
       var fenway = { lat: -28.0175046, lng: 153.4020889 };
       var map = new google.maps.Map(document.getElementById('map'), {
         center: fenway,
-        zoom: 12
+        zoom: 14
       });
       var panorama = new google.maps.StreetViewPanorama(
         document.getElementById('pano'), {
@@ -30,8 +30,9 @@
           pov: {
             heading: 100,
             pitch: 0,
-            zoom: 0.4
+          
           },
+          zoom: 1,
           motionTracking: false
         });
       map.setStreetView(panorama);
@@ -40,7 +41,7 @@
           var items = data.Details;
           loadNext(items, 0);
         })
-      },6000);
+      },3000);
 
       function loadNext(datas, currentIndex) {
           setTimeout(function () {
@@ -49,6 +50,7 @@
             astorPlace = { lat: data.lat, lng: data.long };
             pano = map.getStreetView();
             pano.setPosition(astorPlace);
+            pano.setZoom(1);
             map.setStreetView(panorama);
             if (data.head) {
               var pov = pano.getPov();
